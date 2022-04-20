@@ -1,0 +1,37 @@
+{
+  "name": "tinder-api",
+  "version": "1.0.0",
+  "author": "christophe bellec",
+  "homepage": "https://github.com/christophe77/tinder-api",
+  "engines": {
+    "node": "12.x || 14.x || >= 16"
+  },
+  "keywords": [
+    "tinder",
+    "api",
+    "javascript",
+    "typescript"
+  ],
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "scripts": {
+    "start": "yarn build && node ./dist/cjs/index.js",
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "prepublish": "yarn build",
+    "lint": "eslint . --ext .ts"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^17.0.23",
+    "eslint": "^8.12.0",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "axios": "^0.26.1"
+  }
+}
