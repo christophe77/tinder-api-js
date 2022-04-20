@@ -1,6 +1,6 @@
 {
-  "name": "tinder-api",
-  "version": "1.0.0",
+  "name": "tinder-api-js",
+  "version": "1.0.2",
   "author": "christophe bellec",
   "homepage": "https://github.com/christophe77/tinder-api",
   "engines": {
