@@ -1,6 +1,3 @@
-# dist
-dist/cjs
-dist/esm
 # Logs
 logs
 *.log
