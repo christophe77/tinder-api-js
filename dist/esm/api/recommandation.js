@@ -6,7 +6,7 @@ async function getRecommandations() {
         return res.data;
     }
     catch (error) {
-        throw new Error(((_a = error.response) === null || _a === void 0 ? void 0 : _a.statusText) || "getRecs failed");
+        throw new Error(((_a = error.response) === null || _a === void 0 ? void 0 : _a.statusText) || "getRecommandations failed");
     }
 }
 const recommandation = {

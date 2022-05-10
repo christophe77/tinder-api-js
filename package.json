@@ -32,6 +32,8 @@
     "typescript": "^4.6.3"
   },
   "dependencies": {
-    "axios": "^0.26.1"
+    "axios": "^0.26.1",
+    "puppeteer": "^13.7.0",
+    "yajdb": "^1.0.9"
   }
 }

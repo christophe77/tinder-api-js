@@ -1,6 +1,6 @@
 declare const tinderApi: {
     auth: {
-        withFacebook: (authData: import("./types/auth").AuthData) => Promise<import("./types/auth").AuthFacebook>;
+        withFacebook: (credentials: import("./types/auth").Credentials) => Promise<import("./types/auth").AuthFacebook>;
     };
     feeling: {
         like: (userId: string) => Promise<import("./types/feelings").Feeling>;

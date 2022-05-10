@@ -15,3 +15,7 @@ export type AuthData = {
   token: string;
   facebook_id: string;
 };
+export type Credentials = {
+  email : string;
+  password: string;
+}

@@ -1,10 +1,10 @@
 # tinder-api
 
-Working may 2022 - Only facebook auth.<br />
-Get your facebook id here : https://lookup-id.com/<br />
-Get facebook header here :<br />
+Working may 2022 - Only facebook auth.
 
-    https://www.facebook.com/dialog/oauth?client_id=464891386855067&redirect_uri=https://www.facebook.com/connect/login_success.html&scope=basic_info,email,public_profile,user_about_me,user_activities,user_birthday,user_education_history,user_friends,user_interests,user_likes,user_location,user_photos,user_relationship_details&response_type=token
+## 1.0.7 breaking changes
+
+Auth process is now done using your facebook account, you don't have to get the token by yourself.
 
 ## Available commands
 
@@ -12,12 +12,11 @@ Get facebook header here :<br />
 
 Only with facebook for the moment.
 
-    const facebookAuth = {
-        token:
-            "EAAGm0PX4ZCpsBADOYsqssNBjtHFqADsOpjbZAfNgl7JkIjFwPlgvL2nj3oUqcCtWce1cLSAJHgG4d6m5hEeMlvbdOPFItD1YBik7cZByptBC6ZC5ovCI2IpsI3ZCBXZC5YztZCRcaqRZB1qcj8xWdceDjzHQI66Lkfcn20OP4qNdDlNjVeUP7e",
-        facebook_id: "1020365714402091",
+    const facebookCredentials = {
+        email: "your.email@gmail.com",
+        password: "your.password",
     };
-    const login = await tinderApi.auth.withFacebook(facebookAuth);
+    const login = await tinderApi.auth.withFacebook(facebookCredentials);
 
 Auth is mandatory before any action.
 
@@ -112,3 +111,8 @@ Like : tinderApi.feeling.like(userId)
 Pass : tinderApi.feeling.pass(userId)
 
      const pass = await tinderApi.feeling.pass("8547852255");
+
+#### TODO
+
+Facebook user_id and long_lived_token are stored in a json file using yajdb.<br />
+I want to check token validity before getting a new one which is a long process with Puppeteer.<br />

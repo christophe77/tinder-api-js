@@ -6,7 +6,7 @@ async function getRecommandations(): Promise<Recommandations> {
     const res = await axiosInstance.get("/recs/core");
     return res.data;
   } catch (error: any) {
-    throw new Error(error.response?.statusText || "getRecs failed");
+    throw new Error(error.response?.statusText || "getRecommandations failed");
   }
 }
 
