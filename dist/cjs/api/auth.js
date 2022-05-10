@@ -11,7 +11,6 @@ async function withFacebook(credentials) {
     try {
         await (0, facebookLogin_1.default)(credentials);
         const authData = await (0, db_1.getAuthDatas)();
-        console.log(authData);
         const res = await axiosInstance_1.default.post("/v2/auth/login/facebook", authData);
         axiosInstance_1.default.defaults.headers.common["x-auth-token"] =
             res.data.data.api_token;
