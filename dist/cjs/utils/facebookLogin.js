@@ -41,7 +41,7 @@ async function checkPageSourceForUserId(source) {
 async function facebookLogin(credentials) {
     await (0, db_1.createDb)();
     const browser = await puppeteer_1.default.launch({
-        headless: false,
+        headless: true,
         args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
     const page = await browser.newPage();
@@ -52,6 +52,7 @@ async function facebookLogin(credentials) {
         // watch url change
         page.on("framenavigated", async (frame) => {
             const url = frame.url();
+            console.log(url);
             checkUrlForToken(url);
             const source = await page.content();
             checkPageSourceForUserId(source);
