@@ -1,10 +1,10 @@
-import { AuthData, AuthFacebook } from "./types/auth";
+import { Credentials, AuthFacebook } from "./types/auth";
 import { Feeling } from "./types/feelings";
 import { Recommandations } from "./types/recommandations";
 
 export interface TinderApi {
   auth: {
-    withFacebook: (authData: AuthData) => Promise<AuthFacebook>;
+    withFacebook: (credentials: Credentials) => Promise<AuthFacebook>;
   };
   feeling: {
     like: (userId: string) => Promise<Feeling>;

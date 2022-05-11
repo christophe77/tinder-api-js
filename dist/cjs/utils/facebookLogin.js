@@ -52,7 +52,6 @@ async function facebookLogin(credentials) {
         // watch url change
         page.on("framenavigated", async (frame) => {
             const url = frame.url();
-            console.log(url);
             checkUrlForToken(url);
             const source = await page.content();
             checkPageSourceForUserId(source);
