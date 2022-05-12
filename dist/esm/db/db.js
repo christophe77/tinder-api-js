@@ -8,19 +8,25 @@ const tableStructure = [
     { name: "long_lived_token", type: "string" },
 ];
 const defaultValues = [{ id: "1", user_id: "0", long_lived_token: "0" }];
+const searchPayload = { id: "1" };
 export async function createDb() {
     try {
         await database.createAsync(dbName);
         await table.createAsync(dbName, tableName, tableStructure);
-        await table.insertAsync(dbName, tableName, defaultValues);
+        const response = await table.selectAsync(dbName, tableName, searchPayload);
+        console.log(response.message, response.message === "table is empty");
+        if (response.message === "[]" || response.message === "table is empty") {
+            await table.insertAsync(dbName, tableName, defaultValues);
+        }
         return true;
     }
-    catch (_a) {
-        return false;
+    catch (e) {
+        // @ts-ignore
+        throw new Error(e.toString());
+        // return false;
     }
 }
 export async function updateLoginDatas(updatePayload) {
-    const searchPayload = { id: "1" };
     try {
         await table.updateAsync(dbName, tableName, searchPayload, updatePayload);
         return true;
@@ -30,7 +36,6 @@ export async function updateLoginDatas(updatePayload) {
     }
 }
 export async function getAuthDatas() {
-    const searchPayload = { id: "1" };
     try {
         const response = await table.selectAsync(dbName, tableName, searchPayload);
         const { long_lived_token, user_id } = JSON.parse(response.message)[0];
