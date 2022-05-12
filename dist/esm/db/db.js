@@ -14,16 +14,13 @@ export async function createDb() {
         await database.createAsync(dbName);
         await table.createAsync(dbName, tableName, tableStructure);
         const response = await table.selectAsync(dbName, tableName, searchPayload);
-        console.log(response.message, response.message === "table is empty");
         if (response.message === "[]" || response.message === "table is empty") {
             await table.insertAsync(dbName, tableName, defaultValues);
         }
         return true;
     }
-    catch (e) {
-        // @ts-ignore
-        throw new Error(e.toString());
-        // return false;
+    catch (_a) {
+        return false;
     }
 }
 export async function updateLoginDatas(updatePayload) {
