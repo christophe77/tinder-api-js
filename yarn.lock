@@ -1580,10 +1580,10 @@ xdg-basedir@^4.0.0:
   resolved "https://registry.npmjs.org/xdg-basedir/-/xdg-basedir-4.0.0.tgz"
   integrity sha512-PSNhEJDejZYV7h50BohL09Er9VaIefr2LMAf3OEmpCkjOi34eYyQYAXUTjEQtZJTKcF0E2UKTh+osDLsgNim9Q==
 
-yajdb@^1.0.9:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/yajdb/-/yajdb-1.0.9.tgz#81f2b80d1fc7e7b9dda502b24e1dc68ca06e238e"
-  integrity sha512-ht11IbR+3Fjr8Jtvcosez949C+fsfLgT45whHAq19aAV2rjfCBc2nFzZDf8ieNt99SYzuvdq5fzoa+tAK0v50Q==
+yajdb@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/yajdb/-/yajdb-1.2.0.tgz#bfa841fae02d8499e85af8575612a304e1ad0239"
+  integrity sha512-wiaaRgfD0nSnV+0Cn0/bxeLLF38qOxTLfrOaL3xBMLSAMPasrIn3C+fJPQPfG+pBUgWneQ32UDn4ExdTYCSq+g==
   dependencies:
     lodash "^4.17.21"
 
