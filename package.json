@@ -1,6 +1,6 @@
 {
   "name": "tinder-api-js",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "author": "christophe bellec",
   "homepage": "https://github.com/christophe77/tinder-api",
   "engines": {
@@ -34,6 +34,6 @@
   "dependencies": {
     "axios": "^0.26.1",
     "puppeteer": "^13.7.0",
-    "yajdb": "^1.0.9"
+    "yajdb": "^1.2.0"
   }
 }
